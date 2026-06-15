@@ -1,13 +1,6 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  Alert,
-} from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
+import Estacao from '../../assets/images/estacao.jpg'
 
 export default function Login({ navigation }) {
   const [usuario, setUsuario] = useState("");
@@ -26,9 +19,7 @@ export default function Login({ navigation }) {
     <View style={estilos.container}>
       <View style={estilos.card}>
         <Image
-          source={{
-            uri: "https://cdn-icons-png.flaticon.com/512/1163/1163661.png",
-          }}
+          source={Estacao}
           style={estilos.imagem}
         />
 
@@ -55,11 +46,11 @@ export default function Login({ navigation }) {
           onChangeText={setSenha}
         />
 
-        <TouchableOpacity style={estilos.botao} onPress={entrar}>
+        <TouchableOpacity style={estilos.botao} onPress={() => navigation.navigate("Inicio")}>
           <Text style={estilos.textoBotao}>Entrar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Registro")}>
           <Text style={estilos.criarConta}>
             Criar conta
           </Text>
